@@ -155,6 +155,13 @@ export class AgentProcessorFunction extends PythonFunction {
         AWS_STACK_NAME: Stack.of(scope).stackName,
         METRIC_NAMESPACE: props.metricNamespace,
         ...(props.encryptionKey && { KMS_KEY_ID: props.encryptionKey.keyId }),
+        OKAHU_API_KEY: "okh_kssXmcOe_Vbn9wzdlHVXAVgc4w8JD",
+        MONOCLE_S3_BUCKET_NAME: "monocle-traces",
+        MONOCLE_BLOB_CONNECTION_STRING:
+          "DefaultEndpointsProtocol=https;AccountName=moncletraces;AccountKey=w8BXs0Rb7r/TNrLJEHDSVPkrWnLkqKNj2PW3rUJbTbyH8v6RmvbDpaimVNcW9BsEGMB/IJmhYKA2+AStAY3LQw==;EndpointSuffix=core.windows.net",
+        MONOCLE_BLOB_CONTAINER_NAME: "monocle-traces",
+        MONOCLE_EXPORTER: "okahu,blob,s3,file",
+        MONOCLE_TRACE_OUTPUT_PATH: "../.monocle",
       },
       layers: [IdpPythonLayerVersion.getOrCreate(Stack.of(scope), "agents")],
     });

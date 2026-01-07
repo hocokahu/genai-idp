@@ -134,7 +134,21 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
         document = Document.load_document(event["document"], working_bucket, logger)
         input_bucket = document.input_bucket
         object_key = document.input_key
+        
+        # Validate BDAProjectArn is present and not empty
+        if 'BDAProjectArn' not in event:
+            raise ValueError("BDAProjectArn is missing from the event. Please ensure the state machine is configured with a valid BDA project ARN.")
+        
         data_project_arn = event['BDAProjectArn']
+        if not data_project_arn or not isinstance(data_project_arn, str) or not data_project_arn.strip():
+            raise ValueError(
+                f"BDAProjectArn is empty or invalid: '{data_project_arn}'. "
+                f"Please ensure the Bedrock Data Automation project is properly deployed and the ARN is correctly configured in the state machine."
+            )
+        
+        data_project_arn = data_project_arn.strip()
+        logger.info(f"Using BDA Project ARN: {data_project_arn}")
+        
         task_token = event['taskToken']
         
         track_task_token(object_key, task_token)

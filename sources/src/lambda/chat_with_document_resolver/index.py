@@ -13,6 +13,8 @@ import re
 from urllib.parse import urlparse
 from botocore.exceptions import ClientError
 from idp_common.bedrock.client import BedrockClient
+from monocle_apptrace import setup_monocle_telemetry
+setup_monocle_telemetry(workflow_name="aws-genai-idp")
 
 # Set up logging
 logger = logging.getLogger()

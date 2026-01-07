@@ -116,6 +116,13 @@ export class QueryKnowledgeBaseResolverFunction
         GUARDRAIL_ID_AND_VERSION: props.guardrail
           ? `${props.guardrail.guardrailId}:${props.guardrail.guardrailVersion}`
           : "",
+        OKAHU_API_KEY: "okh_kssXmcOe_Vbn9wzdlHVXAVgc4w8JD",
+        MONOCLE_S3_BUCKET_NAME: "monocle-traces",
+        MONOCLE_BLOB_CONNECTION_STRING:
+          "DefaultEndpointsProtocol=https;AccountName=moncletraces;AccountKey=w8BXs0Rb7r/TNrLJEHDSVPkrWnLkqKNj2PW3rUJbTbyH8v6RmvbDpaimVNcW9BsEGMB/IJmhYKA2+AStAY3LQw==;EndpointSuffix=core.windows.net",
+        MONOCLE_BLOB_CONTAINER_NAME: "monocle-traces",
+        MONOCLE_EXPORTER: "okahu,blob,s3,file",
+        MONOCLE_TRACE_OUTPUT_PATH: "../.monocle",
       },
       ...props,
     });

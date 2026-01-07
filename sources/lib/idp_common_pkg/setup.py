@@ -8,6 +8,7 @@ from setuptools import find_packages, setup
 # Core dependencies required for all installations
 install_requires = [
     "boto3==1.39.4",  # Core dependency for AWS services
+    # "monocle_apptrace==0.7.0",  # Monocle apptrace for instrumentation
 ]
 
 # Optional dependencies by component

@@ -8,6 +8,8 @@ Helper function for creating BedrockModel instances with automatic guardrail sup
 import os
 
 from strands.models import BedrockModel
+# from monocle_apptrace import setup_monocle_telemetry
+# setup_monocle_telemetry(workflow_name="aws-genai-idp")
 
 
 def create_strands_bedrock_model(

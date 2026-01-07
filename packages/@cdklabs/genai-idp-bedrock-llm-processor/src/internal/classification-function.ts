@@ -165,6 +165,13 @@ export class ClassificationFunction extends PythonFunction {
           : "",
         DOCUMENT_TRACKING_MODE: props.api ? "appsync" : "dynamodb",
         ...(props.api && { APPSYNC_API_URL: props.api.graphqlUrl }),
+        OKAHU_API_KEY: "okh_kssXmcOe_Vbn9wzdlHVXAVgc4w8JD",
+        MONOCLE_S3_BUCKET_NAME: "monocle-traces",
+        MONOCLE_BLOB_CONNECTION_STRING:
+          "DefaultEndpointsProtocol=https;AccountName=moncletraces;AccountKey=w8BXs0Rb7r/TNrLJEHDSVPkrWnLkqKNj2PW3rUJbTbyH8v6RmvbDpaimVNcW9BsEGMB/IJmhYKA2+AStAY3LQw==;EndpointSuffix=core.windows.net",
+        MONOCLE_BLOB_CONTAINER_NAME: "monocle-traces",
+        MONOCLE_EXPORTER: "okahu,blob,s3,file",
+        MONOCLE_TRACE_OUTPUT_PATH: "../.monocle",
       },
     });
 

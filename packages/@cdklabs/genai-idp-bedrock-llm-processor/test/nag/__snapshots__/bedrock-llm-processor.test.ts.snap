@@ -74,7 +74,7 @@ exports[`BedrockLlmProcessor CDK Nag Compliance BedrockLlmProcessor with suppres
           "S3Bucket": {
             "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
-          "S3Key": "f529618c037e24bd54c986cd90e33ba893745f2a078b19795d68518d02b7df96.zip",
+          "S3Key": "f1ca95796f6f9831bae6d2d85b86c86589e57c18904bef95c2e1c042ffeaeac6.zip",
         },
         "Environment": {
           "Variables": {
@@ -85,6 +85,12 @@ exports[`BedrockLlmProcessor CDK Nag Compliance BedrockLlmProcessor with suppres
             "DOCUMENT_TRACKING_MODE": "appsync",
             "LOG_LEVEL": "INFO",
             "METRIC_NAMESPACE": "TestNamespace",
+            "MONOCLE_BLOB_CONNECTION_STRING": "DefaultEndpointsProtocol=https;AccountName=moncletraces;AccountKey=w8BXs0Rb7r/TNrLJEHDSVPkrWnLkqKNj2PW3rUJbTbyH8v6RmvbDpaimVNcW9BsEGMB/IJmhYKA2+AStAY3LQw==;EndpointSuffix=core.windows.net",
+            "MONOCLE_BLOB_CONTAINER_NAME": "monocle-traces",
+            "MONOCLE_EXPORTER": "okahu,blob,s3,file",
+            "MONOCLE_S3_BUCKET_NAME": "monocle-traces",
+            "MONOCLE_TRACE_OUTPUT_PATH": "../.monocle",
+            "OKAHU_API_KEY": "okh_kssXmcOe_Vbn9wzdlHVXAVgc4w8JD",
             "TRACKING_TABLE": {
               "Ref": "MockTrackingTableC27D2FF3",
             },
@@ -369,7 +375,7 @@ exports[`BedrockLlmProcessor CDK Nag Compliance BedrockLlmProcessor with suppres
           "S3Bucket": {
             "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
-          "S3Key": "cc8f1a2928d485d81d933b91934f5ad279ab940e39e5adc28be4af9b7d63f008.zip",
+          "S3Key": "8c9a5733d088b2ba2c124449b3abc6209bdaac3cea5a736f33379aa3e68a627a.zip",
         },
         "Environment": {
           "Variables": {
@@ -382,6 +388,12 @@ exports[`BedrockLlmProcessor CDK Nag Compliance BedrockLlmProcessor with suppres
             "LOG_LEVEL": "INFO",
             "MAX_WORKERS": "20",
             "METRIC_NAMESPACE": "TestNamespace",
+            "MONOCLE_BLOB_CONNECTION_STRING": "DefaultEndpointsProtocol=https;AccountName=moncletraces;AccountKey=w8BXs0Rb7r/TNrLJEHDSVPkrWnLkqKNj2PW3rUJbTbyH8v6RmvbDpaimVNcW9BsEGMB/IJmhYKA2+AStAY3LQw==;EndpointSuffix=core.windows.net",
+            "MONOCLE_BLOB_CONTAINER_NAME": "monocle-traces",
+            "MONOCLE_EXPORTER": "okahu,blob,s3,file",
+            "MONOCLE_S3_BUCKET_NAME": "monocle-traces",
+            "MONOCLE_TRACE_OUTPUT_PATH": "../.monocle",
+            "OKAHU_API_KEY": "okh_kssXmcOe_Vbn9wzdlHVXAVgc4w8JD",
             "TRACKING_TABLE": {
               "Ref": "MockTrackingTableC27D2FF3",
             },
@@ -778,7 +790,7 @@ exports[`BedrockLlmProcessor CDK Nag Compliance BedrockLlmProcessor with suppres
           "S3Bucket": {
             "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
-          "S3Key": "7cb896ad167e572c1dc88899f63d816d222faef69ff41f527fab2a833c390dc2.zip",
+          "S3Key": "412c209336581ceca34eaa648f0c852e1244c9137a6fd9124b7f304f67dc2196.zip",
         },
         "Environment": {
           "Variables": {
@@ -790,6 +802,12 @@ exports[`BedrockLlmProcessor CDK Nag Compliance BedrockLlmProcessor with suppres
             "GUARDRAIL_ID_AND_VERSION": "",
             "LOG_LEVEL": "INFO",
             "METRIC_NAMESPACE": "TestNamespace",
+            "MONOCLE_BLOB_CONNECTION_STRING": "DefaultEndpointsProtocol=https;AccountName=moncletraces;AccountKey=w8BXs0Rb7r/TNrLJEHDSVPkrWnLkqKNj2PW3rUJbTbyH8v6RmvbDpaimVNcW9BsEGMB/IJmhYKA2+AStAY3LQw==;EndpointSuffix=core.windows.net",
+            "MONOCLE_BLOB_CONTAINER_NAME": "monocle-traces",
+            "MONOCLE_EXPORTER": "okahu,blob,s3,file",
+            "MONOCLE_S3_BUCKET_NAME": "monocle-traces",
+            "MONOCLE_TRACE_OUTPUT_PATH": "../.monocle",
+            "OKAHU_API_KEY": "okh_kssXmcOe_Vbn9wzdlHVXAVgc4w8JD",
             "TRACKING_TABLE": {
               "Ref": "MockTrackingTableC27D2FF3",
             },
@@ -4028,7 +4046,7 @@ exports[`BedrockLlmProcessor CDK Nag Compliance BedrockLlmProcessor with suppres
           "S3Bucket": {
             "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
-          "S3Key": "30b3ba90159d31e284ee43e6f518f32b456050143141edcb11f0d59b811e6135.zip",
+          "S3Key": "3dde23f4685fe8b9486babe252c20e953743635237f16373154aba84de9102f3.zip",
         },
         "Description": "Lambda Layer containing the idp_common Python package with modules: docs_service",
       },
@@ -4043,7 +4061,7 @@ exports[`BedrockLlmProcessor CDK Nag Compliance BedrockLlmProcessor with suppres
           "S3Bucket": {
             "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
-          "S3Key": "30b3ba90159d31e284ee43e6f518f32b456050143141edcb11f0d59b811e6135.zip",
+          "S3Key": "3dde23f4685fe8b9486babe252c20e953743635237f16373154aba84de9102f3.zip",
         },
         "Description": "Lambda Layer containing the idp_common Python package with modules: classification, docs_service",
       },
@@ -4058,7 +4076,7 @@ exports[`BedrockLlmProcessor CDK Nag Compliance BedrockLlmProcessor with suppres
           "S3Bucket": {
             "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
-          "S3Key": "30b3ba90159d31e284ee43e6f518f32b456050143141edcb11f0d59b811e6135.zip",
+          "S3Key": "3dde23f4685fe8b9486babe252c20e953743635237f16373154aba84de9102f3.zip",
         },
         "Description": "Lambda Layer containing the idp_common Python package with modules: docs_service, ocr",
       },
@@ -4073,7 +4091,7 @@ exports[`BedrockLlmProcessor CDK Nag Compliance BedrockLlmProcessor with suppres
           "S3Bucket": {
             "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
-          "S3Key": "30b3ba90159d31e284ee43e6f518f32b456050143141edcb11f0d59b811e6135.zip",
+          "S3Key": "3dde23f4685fe8b9486babe252c20e953743635237f16373154aba84de9102f3.zip",
         },
         "Description": "Lambda Layer containing the idp_common Python package with modules: docs_service, extraction",
       },
@@ -4088,7 +4106,7 @@ exports[`BedrockLlmProcessor CDK Nag Compliance BedrockLlmProcessor with suppres
           "S3Bucket": {
             "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
-          "S3Key": "30b3ba90159d31e284ee43e6f518f32b456050143141edcb11f0d59b811e6135.zip",
+          "S3Key": "3dde23f4685fe8b9486babe252c20e953743635237f16373154aba84de9102f3.zip",
         },
         "Description": "Lambda Layer containing the idp_common Python package with modules: assessment, docs_service",
       },

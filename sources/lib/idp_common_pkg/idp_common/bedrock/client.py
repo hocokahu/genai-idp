@@ -27,6 +27,9 @@ except ImportError:
     RequestsReadTimeout = Exception
     RequestsConnectTimeout = Exception
 
+# from monocle_apptrace import setup_monocle_telemetry
+# setup_monocle_telemetry(workflow_name="aws-genai-idp")
+
 logger = logging.getLogger(__name__)
 
 # Default retry settings

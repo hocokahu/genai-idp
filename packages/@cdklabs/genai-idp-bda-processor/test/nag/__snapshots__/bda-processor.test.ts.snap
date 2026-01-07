@@ -4381,7 +4381,7 @@ Do not include any text, explanations, or notes outside of this JSON structure. 
           "S3Bucket": {
             "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
-          "S3Key": "30b3ba90159d31e284ee43e6f518f32b456050143141edcb11f0d59b811e6135.zip",
+          "S3Key": "3dde23f4685fe8b9486babe252c20e953743635237f16373154aba84de9102f3.zip",
         },
         "Description": "Lambda Layer containing the idp_common Python package with modules: docs_service",
       },
@@ -4396,7 +4396,7 @@ Do not include any text, explanations, or notes outside of this JSON structure. 
           "S3Bucket": {
             "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
-          "S3Key": "30b3ba90159d31e284ee43e6f518f32b456050143141edcb11f0d59b811e6135.zip",
+          "S3Key": "3dde23f4685fe8b9486babe252c20e953743635237f16373154aba84de9102f3.zip",
         },
         "Description": "Lambda Layer containing the idp_common Python package with modules: appsync, summarization",
       },
@@ -4411,7 +4411,7 @@ Do not include any text, explanations, or notes outside of this JSON structure. 
           "S3Bucket": {
             "Fn::Sub": "cdk-hnb659fds-assets-\${AWS::AccountId}-\${AWS::Region}",
           },
-          "S3Key": "30b3ba90159d31e284ee43e6f518f32b456050143141edcb11f0d59b811e6135.zip",
+          "S3Key": "3dde23f4685fe8b9486babe252c20e953743635237f16373154aba84de9102f3.zip",
         },
         "Description": "Lambda Layer containing the idp_common Python package with modules: core (base only)",
       },

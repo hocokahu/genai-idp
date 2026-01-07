@@ -1,1 +1,2 @@
+monocle_apptrace==0.7.0
 ../../lib/idp_common_pkg[extraction,docs_service]  # extraction module and document service with dependencies

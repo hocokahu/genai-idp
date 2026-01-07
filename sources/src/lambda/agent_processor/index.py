@@ -20,6 +20,8 @@ from botocore.exceptions import ClientError
 from idp_common.agents.analytics import get_analytics_config, parse_agent_response
 from idp_common.agents.factory import agent_factory
 from idp_common.agents.common.config import configure_logging
+# from monocle_apptrace import setup_monocle_telemetry
+# setup_monocle_telemetry(workflow_name="aws-genai-idp")
 
 # Configure logging for both application and Strands framework
 # This will respect both LOG_LEVEL and STRANDS_LOG_LEVEL environment variables

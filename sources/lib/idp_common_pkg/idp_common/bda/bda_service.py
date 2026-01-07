@@ -3,13 +3,36 @@
 
 import logging
 import os
+import re
 import time
 import uuid
 from typing import Optional
 
 import boto3
+# from monocle_apptrace import setup_monocle_telemetry
+# setup_monocle_telemetry(workflow_name="aws-genai-idp")
 
 logger = logging.getLogger(__name__)
+
+
+def _validate_data_automation_project_arn(arn: str) -> bool:
+    """
+    Validate that the ARN is a valid Bedrock Data Automation Project ARN.
+    
+    Expected format: arn:aws:bedrock:<region>:<account-id>:data-automation-project/<project-name>
+    
+    Args:
+        arn: The ARN to validate
+        
+    Returns:
+        True if valid, False otherwise
+    """
+    if not arn or not isinstance(arn, str):
+        return False
+    
+    # Pattern for Bedrock Data Automation Project ARN
+    pattern = r'^arn:aws:bedrock:[a-z0-9-]+:\d{12}:data-automation-project/[a-zA-Z0-9_-]+$'
+    return bool(re.match(pattern, arn))
 
 
 class BdaService:
@@ -21,6 +44,13 @@ class BdaService:
     ):
         self._output_s3_uri = output_s3_uri
 
+        # Validate dataAutomationProjectArn if provided
+        if dataAutomationProjectArn:
+            if not _validate_data_automation_project_arn(dataAutomationProjectArn):
+                raise ValueError(
+                    f"Invalid dataAutomationProjectArn format: '{dataAutomationProjectArn}'. "
+                    f"Expected format: arn:aws:bedrock:<region>:<account-id>:data-automation-project/<project-name>"
+                )
         self._dataAutomationProjectArn = dataAutomationProjectArn
 
         self._dataAutomationProfileArn = dataAutomationProfileArn
@@ -54,10 +84,20 @@ class BdaService:
             }
             payload["blueprints"] = [blueprint]
         elif self._dataAutomationProjectArn:
+            # Double-check ARN is valid before using it (defensive check)
+            if not _validate_data_automation_project_arn(self._dataAutomationProjectArn):
+                raise ValueError(
+                    f"Invalid dataAutomationProjectArn: '{self._dataAutomationProjectArn}'. "
+                    f"Cannot invoke data automation with invalid ARN."
+                )
             payload["dataAutomationConfiguration"] = {
                 "dataAutomationProjectArn": self._dataAutomationProjectArn,
                 "stage": "LIVE",
             }
+        else:
+            raise ValueError(
+                "Either blueprintArn or dataAutomationProjectArn must be provided to invoke data automation."
+            )
 
         response = self._bda_client.invoke_data_automation_async(**payload)
         logger.debug(

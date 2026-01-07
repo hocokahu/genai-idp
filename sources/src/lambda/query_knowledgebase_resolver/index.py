@@ -7,6 +7,8 @@ import boto3
 import re
 import urllib.parse
 import logging
+from monocle_apptrace import setup_monocle_telemetry
+setup_monocle_telemetry(workflow_name="aws-genai-idp")
 
 # Configure logging
 logger = logging.getLogger()
