@@ -1,5 +1,5 @@
 --extra-index-url https://okahu.jfrog.io/artifactory/api/pypi/okahu-patch-pypi/simple
 # boto3>=1.38.45
-monocle-apptrace[aws]==0.7.0b4
+monocle-apptrace==0.7.2b2
 ./lib/idp_common_pkg
 

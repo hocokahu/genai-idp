@@ -1,0 +1,15 @@
+{
+  "arguments": {
+    "input": "What is the purpose of this document?"
+  },
+  "identity": {
+    "sub": "test-user",
+    "username": "test"
+  },
+  "source": null,
+  "request": {
+    "headers": {}
+  },
+  "prev": null,
+  "stash": {}
+}
