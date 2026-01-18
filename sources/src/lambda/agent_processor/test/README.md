@@ -139,12 +139,77 @@ export STRANDS_LOG_LEVEL=INFO
 
 #### Step 4: Run the Test
 
-```bash
-python test/test_local.py
+The test script will automatically create a test job in DynamoDB before calling the handler.
 
-# Or with a custom event file
+**Basic Execution:**
+
+```bash
+# Make sure you're in the Lambda directory
+cd /Users/quanghoc/Documents/GitHub/genai-idp/sources/src/lambda/agent_processor
+
+# Activate virtual environment (if not already active)
+source .venv/bin/activate
+
+# Run the test (creates test job automatically)
+python test/test_local.py
+```
+
+**With Custom Event:**
+
+```bash
+# Use a custom event file
 python test/test_local.py --event test/event.json
 ```
+
+**What the test script does:**
+1. Loads environment variables from `test/.env`
+2. Imports the Lambda function module (tests monocle telemetry setup)
+3. **Creates a test job in DynamoDB** with:
+   - `PK`: `agent#{userId}` (from event)
+   - `SK`: `{jobId}` (from event)
+   - `query`: "What is the total revenue?"
+   - `agentIds`: `["Analytics-Agent-v1"]`
+   - `status`: "PENDING"
+4. Calls the handler with the test event
+5. Monocle automatically generates trace files in `.monocle/` folder
+
+**Example Output:**
+
+```
+======================================================================
+Testing agent_processor Lambda Function
+======================================================================
+Lambda directory: /Users/quanghoc/Documents/GitHub/genai-idp/sources/src/lambda/agent_processor
+...
+
+✅ Successfully imported index module
+✅ setup_monocle_telemetry executed without errors
+...
+
+Creating test job in DynamoDB...
+✅ Created test job in DynamoDB:
+   PK: agent#test-user-123
+   SK: test-job-456
+   Query: What is the total revenue?
+   AgentIds: ["Analytics-Agent-v1"]
+
+Calling handler...
+======================================================================
+✅ SUCCESS! Handler executed successfully
+======================================================================
+...
+
+✅ All tests passed!
+======================================================================
+
+Note: Check .monocle/ folder for trace files (may take a few seconds to appear)
+```
+
+**Expected Output:**
+- ✅ Import and telemetry setup success
+- ✅ Test job created in DynamoDB
+- ✅ Handler execution with agent processing
+- ✅ Trace files generated in `.monocle/` folder
 
 ### What This Tests
 
@@ -170,19 +235,23 @@ The test script verifies:
    - Uses a sample event with `userId` and `jobId`
    - Tests the full handler flow
 
-**Note**: For a complete test, you need a valid job record in the DynamoDB `AGENT_TABLE` with:
-- `PK`: `agent#{userId}`
-- `SK`: `{jobId}`
-- `query`: The query string
-- `agentIds`: JSON array of agent IDs (e.g., `["agent-id-1"]`)
+**Note**: The test script automatically creates a test job in DynamoDB before calling the handler. You don't need to manually create the job - the script handles it for you.
 
 ### Test Output
 
 The test will show:
 - ✅ Import success/failure
 - ✅ Telemetry setup success/failure
+- ✅ Test job creation in DynamoDB
 - ✅ Handler execution results
 - ✅ Full error traces if anything fails
+- ✅ Note about trace files in `.monocle/` folder
+
+**Trace Files:**
+After the test completes, check the `.monocle/` folder for trace files. Monocle automatically generates trace files when spans are created and exported. The files are named like:
+- `monocle_trace_aws-genai-idp_{trace_id}_{timestamp}.json`
+
+Note: Trace files may take a few seconds to appear as Monocle batches spans before writing them.
 
 ### Troubleshooting
 
@@ -227,13 +296,32 @@ STRANDS_LOG_LEVEL=INFO
 #### DynamoDB Job Not Found
 
 If you get "Job not found" errors:
-1. Create a test job in DynamoDB:
-   - Table: `AGENT_TABLE`
-   - PK: `agent#{userId}`
-   - SK: `{jobId}`
-   - Attributes: `query` (string), `agentIds` (JSON string array)
+1. **Check AWS credentials**: Make sure your AWS credentials are configured
+   ```bash
+   aws configure
+   aws sts get-caller-identity
+   ```
 
-2. Or update `test/event.json` with existing `userId` and `jobId` values
+2. **Check AGENT_TABLE environment variable**: Verify it's set in `test/.env`
+   ```bash
+   grep AGENT_TABLE test/.env
+   ```
+
+3. **Check DynamoDB permissions**: Ensure your AWS credentials have permission to write to the table
+   ```bash
+   # Test write access
+   aws dynamodb put-item \
+     --table-name "$(grep AGENT_TABLE test/.env | cut -d'=' -f2)" \
+     --item '{"PK":{"S":"agent#test"}, "SK":{"S":"test"}}' \
+     --region us-west-2
+   ```
+
+4. **Verify the test job was created**: The script should show "✅ Created test job in DynamoDB" - if not, check the error message
+
+**Note**: The test script automatically creates the job, so this error usually indicates:
+- AWS credentials not configured
+- Missing or incorrect `AGENT_TABLE` environment variable
+- Insufficient DynamoDB permissions
 
 ## Deploying to AWS Lambda
 

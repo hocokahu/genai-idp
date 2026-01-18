@@ -16,6 +16,7 @@ import os
 import sys
 from pathlib import Path
 import argparse
+from datetime import datetime
 
 # Get the Lambda directory (parent of test directory)
 test_dir = Path(__file__).parent.absolute()
@@ -188,7 +189,46 @@ missing_vars = [var for var in required_vars if not os.environ.get(var)]
 if missing_vars:
     print(f"⚠️  Warning: Missing environment variables: {', '.join(missing_vars)}")
     print("   The handler may fail or return errors")
-    print("   Note: The handler requires a valid job in DynamoDB to test fully")
+    print()
+
+# Create test job in DynamoDB
+user_id = test_event.get("userId")
+job_id = test_event.get("jobId")
+
+if user_id and job_id and os.environ.get("AGENT_TABLE"):
+    print("Creating test job in DynamoDB...")
+    try:
+        import boto3
+        dynamodb = boto3.resource("dynamodb", region_name=os.environ.get("AWS_REGION", "us-west-2"))
+        table = dynamodb.Table(os.environ["AGENT_TABLE"])
+        
+        # Create test job with required fields
+        test_job = {
+            "PK": f"agent#{user_id}",
+            "SK": job_id,
+            "query": "What is the total revenue?",
+            "agentIds": json.dumps(["Analytics-Agent-v1"]),  # JSON string as stored in DynamoDB
+            "status": "PENDING",
+            "createdAt": datetime.utcnow().isoformat()
+        }
+        
+        # Put item in DynamoDB
+        table.put_item(Item=test_job)
+        print(f"✅ Created test job in DynamoDB:")
+        print(f"   PK: {test_job['PK']}")
+        print(f"   SK: {test_job['SK']}")
+        print(f"   Query: {test_job['query']}")
+        print(f"   AgentIds: {test_job['agentIds']}")
+        print()
+    except Exception as e:
+        print(f"⚠️  Warning: Failed to create test job in DynamoDB: {e}")
+        print("   The handler will fail with 403 if the job doesn't exist")
+        print()
+else:
+    if not user_id or not job_id:
+        print("⚠️  Warning: Cannot create test job - missing userId or jobId in event")
+    if not os.environ.get("AGENT_TABLE"):
+        print("⚠️  Warning: Cannot create test job - AGENT_TABLE environment variable not set")
     print()
 
 context = MockContext()
@@ -229,3 +269,5 @@ print()
 print("=" * 70)
 print("✅ All tests passed!")
 print("=" * 70)
+print()
+print("Note: Check .monocle/ folder for trace files (may take a few seconds to appear)")
