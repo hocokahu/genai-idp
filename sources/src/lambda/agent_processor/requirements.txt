@@ -1,4 +1,5 @@
+--extra-index-url https://okahu.jfrog.io/artifactory/api/pypi/okahu-patch-pypi/simple
+monocle-apptrace==0.7.2b2
 aws-requests-auth==0.4.3
 requests==2.31.0
-monocle_apptrace==0.7.0
 ./lib/idp_common_pkg[agents]  # idp_common package with analytics agent implementation
