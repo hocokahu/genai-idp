@@ -1,0 +1,8 @@
+{
+  "arguments": {
+    "s3Uri": "lending_package.pdf",
+    "prompt": "What is the total amount?",
+    "history": [],
+    "modelId": "us.amazon.nova-pro-v1:0"
+  }
+}

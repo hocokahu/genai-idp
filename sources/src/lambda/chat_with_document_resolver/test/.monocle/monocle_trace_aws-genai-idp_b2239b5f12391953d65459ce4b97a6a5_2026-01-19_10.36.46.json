@@ -1,0 +1,101 @@
+[{
+    "name": "botocore.client.BedrockRuntime",
+    "context": {
+        "trace_id": "b2239b5f12391953d65459ce4b97a6a5",
+        "span_id": "2bc2f5a101284661",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": "11c9cfdfdb170d12",
+    "start_time": "2026-01-19T18:36:42.764802Z",
+    "end_time": "2026-01-19T18:36:45.330950Z",
+    "status": {
+        "status_code": "OK"
+    },
+    "attributes": {
+        "monocle_apptrace.version": "0.7.2b2",
+        "monocle_apptrace.language": "python",
+        "span_source": "",
+        "workflow.name": "aws-genai-idp",
+        "entity.1.type": "inference.aws_bedrock",
+        "entity.1.inference_endpoint": "https://bedrock-runtime.us-west-2.amazonaws.com",
+        "entity.1.provider_name": "bedrock-runtime.us-west-2.amazonaws.com",
+        "entity.2.name": "us.amazon.nova-premier-v1:0",
+        "entity.2.type": "model.llm.us.amazon.nova-premier-v1:0",
+        "span.type": "inference",
+        "entity.count": 2,
+        "span.subtype": "turn_end"
+    },
+    "events": [
+        {
+            "name": "data.input",
+            "timestamp": "2026-01-19T18:36:42.765219Z",
+            "attributes": {
+                "input": [
+                    "{\"user\": \"<page-number>0</page-number>\\n![QRCODE](./ce297380-24fa-4bfc-aa58-2dcab454d879.png)\\n\\n1\\n\\n| CO.   |   FILE | DEPT. CLOCK   |   NUMBER |\\n|-------|--------|---------------|----------|\\n| ABC   | 126543 | 123456 12345  | 00000000 |\\n\\n# Earnings Statement\\n\\n*ANY COMPANY CORP. 475 ANY AVENUE ANYTOWN, USA 10101*\\n\\nPeriod ending: 7/18/2008 7/25/2008 Pay date:\\n\\n**Social Security Number: 987-65-4321** Taxable Marital Status: Married Exemptions/Allowances: Federal: 3, $25 Additional Tax State: 2 Local: 2\\n\\n**JOHN STILES 101 MAIN STREET ANYTOWN, USA 12345**\\n\\n\\\\* Excluded from federal taxable wages\\n\\nYour federal wages this period are $386.15\\n\\n| Earnings   | rate      | hours   | this period   | year to date   |\\n|------------|-----------|---------|---------------|----------------|\\n| Regular    | 10.00     | 32.00   | 320.00        | 16,640.00      |\\n| Overtime   | 15.00     | 1.00    | 15.00         | 780.00         |\\n| Holiday    | 10.00     | 8.00    | 80.00         | 4,160.00       |\\n| Tuition    |           |         | 37.43\\\\*       | 1,946.80       |\\n|            | Gross Pay |         | $ 452.43      | 23,526.80      |\\n\\n| Deductions   | Statutory           | Statutory   | Statutory   |\\n|--------------|---------------------|-------------|-------------|\\n|              | Federal Income Tax  | - 40.60     | 2,111.20    |\\n|              | Social Security Tax | - 28.05     | 1,458.60    |\\n|              | Medicare Tax        | -6.56       | 341.12      |\\n|              | NY State Income Tax | - 8.43      | 438.36      |\\n|              | NYC Income Tax      | - 5.94      | 308.88      |\\n|              | NY SUI/SDI Tax      | - 0.60      | 31.20       |\\n|              |                     |             |             |\\n|              | Other               |             |             |\\n|              | Bond                | -5.00       | 100.00      |\\n|              | 401(k)              | - -28.85\\u00b0   | 1,500.20    |\\n|              | Stock Plan          | -15.00      | 150.00      |\\n|              | Life Insurance      | -5.00       | 50.00       |\\n|              | Loan                | - - 30.00   | 150.00      |\\n|              | Adjustment          |             |             |\\n|              | Life Insurance      | + 13.50     |             |\\n|              | Net Pay             | $291.90     |             |\\n|              |                     |             |             |\\n\\n|                                |             |               |\\n|--------------------------------|-------------|---------------|\\n| Other Benefits and Information | this period | total to date |\\n| Group Term Life                | 0.51        | 27.00         |\\n| Loan Amt Paid                  |             | 840.00        |\\n| Vac Hrs                        |             | 40.00         |\\n| Sick Hrs                       |             | 16.00         |\\n| Title                          | Operator    |               |\\n\\n\\u2014\\n\\n**Important Notes**\\n\\nEFFECTIVE THIS PAY PERIOD YOUR REGULAR HOURLY RATE HAS BEEN CHANGED FROM $8.00 TO $10.00 PER HOUR.\\n\\nWE WILL BE STARTING OUR UNITED WAY FUND DRIVE SOON AND LOOK FORWARD TO YOUR PARTICIPATION.\\n\\n\\u00a92008. 2001. 2001.2000 2000. 1999 ADP. Inc.\\n\\nTEAR HERE\\n\\n<page-number>1</page-number>\\n# UNITED STATES DRIVER LICENSE\\n\\n**EXPIRES 09/21/2034**\\n\\n**DL 6383736743891101**\\n\\n**CLASS C**\\n **END NONE**\\n\\n**LN DOE**\\n **FN JOHN**\\n **123 ANY STREET**\\n **ANY CITY, CA 92127**\\n\\n**DOB 09/21/1970**\\n **SSN ON FILE**\\n\\n**DONOR**\\n**SEX M** **HAIR BLK EYES BLU**\\n\\n**HGT 5'11\\\" WGT 185LB**\\n **US 11/05/2001266737RP/AMER/19**\\n\\n![IMAGE](./0099a9b0-3899-4099-8d6e-a99337d2dfaf.png)\\n\\n<page-number>2</page-number>\\n# ESTS88103\\n\\nCIRADUALLY\\n\\nPayroll check number:\\t0000000000\\nPay date:\\t7/25/2008\\nSocial Security No.\\t987-65-4321\\n\\nPay to the order of:\\tJOHN STILES\\t\\nThis amount:\\tTWO HUNDRED NINETY-ONE AND 90/100 DOLLARS\\t$291.90\\n\\n**SAMPLE**\\n **NON-NEGOTIABLE**\\n\\nBANK NAME\\n**VOID VOID VOID**\\nAUTHORIZED VOID autharized AFTER 00 SIGNATURE DAYS Signature\\n[SIGNATURE]\\n\\nSTREET ADDRESS\\n CITY STATE ZIP\\n\\n# ANY COMPANY CORP. 475 ANY AVENUE ANYTOWN, USA 10101\\n\\n**\\u2448001379\\u2448 \\u2446122000496\\u24464040110157\\u2448**\\n\\n**THE ORIGINAL DOCUMENT HAS A REFLECTIVE WATERMARK ON THE BACK**\\n\\n**HOLD AT AN ANGLE TO VIEW WHEN CHECKING THE ENDORSEMENT**\\n\\n<page-number>3</page-number>\\n# ACCOUNT STATEMENT\\n\\n## YOUR DETAILS\\n\\n**Jane Doe 100 Main Street, Anytown, USA 555-0100**\\n\\nStatement Period\\t1 MAY 2021 to 31 MAY 2021\\nAccount Number\\t333 008755555\\nAccount Name\\tJane Doe\\nEmail Address\\tNot Recorded\\n\\nYour Account Balance\\t\\nYour opening account balance as at 1 MAY 2021\\t$50,000.00\\nYour closing account balance as at 31 MAY 2021\\t$123,084.85\\n\\n|                           |             |             |              |            |        |\\n|---------------------------|-------------|-------------|--------------|------------|--------|\\n| Your account valuation    |             |             |              |            |        |\\n| Investment option name    | Option code | Units       | Unit Price $ | Value $    | %      |\\n| BT Active Balanced        | 210         | 1,3297.9090 | 1,300        | 17,287.28  | 40     |\\n| First choice moderate     | 080         | 2,3000.5678 | 100          | 23,005.68  | 30     |\\n| First choice Lifestaged   | 010         | 7,100.9876  | 900          | 63,908.89  | 20     |\\n| 2001-09                   |             |             |              |            |        |\\n| Perpetual Balanced growth | 021         | 8,210.0021  | 230          | 18,883.00  | 10     |\\n| Account value             |             |             |              | 123,084.85 | 100.00 |\\n\\n## Your insurance details\\n\\n|                                          |                          |                  |\\n|------------------------------------------|--------------------------|------------------|\\n|                                          |                          |                  |\\n| Benefit Type                             | Insurance cover amount $ | Benefit amount $ |\\n| Amount paid on Death of Terminal illness | 10,000.00                | 17,000.00        |\\n| Amount paid upon Total and Permanent     | 10,000.00                | 17,000.00        |\\n| Disablement                              |                          |                  |\\n\\n<page-number>4</page-number>\\n**a** Employee's social security number\\n\\n22222\\n\\n75395184613\\nOMB No. 1545-0008\\n\\n**b** Employer identification number (EIN)\\n\\n4963147952\\n\\n**C** Employer's name, address, and ZIP code\\n\\nJohn Stiles\\n 100 Main Street, Anytown, USA\\n\\n**d** Control number\\n\\n753951852\\n\\n**e** Employee's first name and initial\\nLast name\\nSuff.\\n\\nArnav\\nDesai\\nM\\n\\n123 Any Street, Any Town, USA\\n\\n**f** Employee's address and ZIP code\\n\\n1 Wages, tips, other compensation\\t\\t\\t\\t\\t2 Federal income tax withheld\\t\\n$100.00\\t\\t\\t\\t\\t$500.00\\t\\n3 Social security wages\\t\\t\\t\\t\\t4 Social security tax withheld\\t\\n$1000.00\\t\\t\\t\\t\\t$100.00\\t\\n5 Medicare wages and tips\\t\\t\\t\\t\\t6 Medicare tax withheld\\t\\n$500.00\\t\\t\\t\\t\\t$5000.00\\t\\n7 Social security tips\\t\\t\\t\\t\\t8 Allocated tips\\t\\n$500.00\\t\\t\\t\\t\\t$150.00\\t\\n9\\t\\t\\t\\t\\t10 Dependent care benefits\\t\\n\\t\\t\\t\\t\\t$5000.00\\t\\n11 Nonqualified plans\\t\\t\\t\\t\\t12a 0000 A\\t$500.00\\n$500.00\\t\\t\\t\\t\\t\\t\\n13 Statutory employee\\t\\t\\tRetirement plan\\tThird-party sick pay\\t12b 0000 c\\t$1500.00\\n[X]\\t\\t\\t[ ]\\t[ ]\\t\\t\\n14\\tOther\\t\\t\\t\\t12c $000 A\\t$500.00\\nNA\\t\\t\\t\\t\\t12d $000 B\\t$1000.00\\n\\n15 State\\tEmployer's state ID number\\t16 State wages, tips, etc.\\t17 State income tax\\t18 Local wages, tips, etc.\\t19 Local income tax\\t20 Locality name\\n\\t\\t\\t\\t\\t\\t\\nAny Town\\t7414568313\\t$50.00\\t$500.00\\t$100.00\\t$550.00\\tAny Town\\n\\n**W-2 Wage and Tax Statement**\\n**Form Copy 1-For State, City, or Local Tax Department**\\n\\n**2022**\\n\\n**Department of XYZ Organaization**\\n\\n<page-number>5</page-number>\\n# Homeowners Insurance Application\\n\\n**Named Insured(s) and Mailing Address Ziggy Starpixel, 42 Rainbow Sparkle Boulevard Unicornville, NV 12345**\\n\\n**Insurance Company** Fake Insurance Co 650 Davis Street San Francisco, CA 94111\\n\\n**Primary Email: rainbow.unicorn.987654@fakeemail.nowhere Primary Phone #:** 555 555 1212 **Alternate Phone #:** 555 555 1213\\n\\n**Insured Property 42 Rainbow Sparkle Boulevard Unicornville, NV 12345**\\n\\nNOTICE OF INSURANCE INFORMATION PRACTICES\\n\\nIn some insurance transactions, we may not be able to get all the information we need directly from you. In that case, we may obtain information from outside sources at our own expense. We would also like to inform you that without prior authorization, we may as permitted by law, provide information about you contained in our records and files to certain persons or organizations.\\n\\nNOTICE: As part of Esurance's underwriting/qualification procedure and subject to applicable laws and regulations, we may obtain information regarding you and other individuals who may be covered by the insurance you are applying for, including: (i) driving record, based on state motor vehicle reports and loss information reports; (ii) your prior insurance record, if any, which will be obtained from your current or prior carrier(s); (iii) credit reports; and (iv) claim history, based on loss information reports.\\n\\nPolicy Number\\tPurchase Date and Time\\tEffective Date\\tExpiration Date\\n123456\\t10/6/2009 at 1pm\\t10/10/2009\\t10/9/2010\\n\\nPrimary Applicant Information\\n\\nName\\n\\nZiggy Starpixel\\n\\nMarital Status\\n\\nGender\\n\\nDate of Birth\\n\\nEducation Level\\n\\nM\\n\\nS\\n\\n2/20/2000\\n\\nDrivers License Number\\n\\nCurrently Insured - Auto\\n\\nDL State\\n\\nExisting Esurance Policy\\n\\n123456\\n\\n1234567A\\n\\nNV\\n\\nFake Auto Ins Co\\n\\nLength of Time with Current Auto Carrier\\n\\nLength of Time with Prior Auto Carrier\\n\\n2 years\\n\\n1 Year\\n\\nType of Current Property Policy\\n\\nYears with Prior Property Company\\n\\nHome\\n\\n1 Year\\n\\nCo-Applicant Information\\n\\nName\\n\\nLuna Starlight-Glitterdust\\n\\nRelationship to Primary Applicant\\n\\nDrivers License Number\\n\\nDL State\\n\\nCurrently Insured- Auto\\n\\n987654A\\n\\nNV\\n\\nFake Auto Ins Co.\\n\\nDomestic Partner\\n\\nLength of Time with Current Auto Carrier\\n\\nLength of Time with Prior Auto Carrier\\n\\n1 year\\n\\n6 months\\n\\nDate of Birth\\tGender\\tMarital Status\\tEducation Level\\n2/29/2000\\tF\\tS\\tGraduate\\n\\nTotal Auto Claims, Accidents, and Violations for all Applicants\\t\\t\\t\\nNumber of Auto Accidents\\t\\tNumber of Violations\\t\\tNumber of Comp Claims Page 1\\nAt-Fault H150100 NV 02 16\\tNot-at-Fault\\tMajor\\tMinor\\n\\n\\n                    \\n                    The history JSON object is: [].\\n\\nThe user's question is: What is the total amount?\"}"
+                ]
+            }
+        },
+        {
+            "name": "data.output",
+            "timestamp": "2026-01-19T18:36:45.330723Z",
+            "attributes": {
+                "response": "{\"assistant\": \"The total amount for the payroll check is $291.90. This is indicated on the payroll check stub under the \\\"Net Pay\\\" section.\\n\\nHere is the relevant excerpt:\\n\\n```\\n|              |             |\\n|--------------|-------------|\\n| Net Pay      | $291.90     |\\n```\\n\\nTherefore, the total amount is **$291.90**.\"}"
+            }
+        },
+        {
+            "name": "metadata",
+            "timestamp": "2026-01-19T18:36:45.330791Z",
+            "attributes": {
+                "completion_tokens": 92,
+                "prompt_tokens": 3856,
+                "total_tokens": 3948,
+                "finish_reason": "end_turn",
+                "finish_type": "success"
+            }
+        }
+    ],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "service.name": "aws-genai-idp"
+        },
+        "schema_url": ""
+    }
+}
+,{
+    "name": "workflow",
+    "context": {
+        "trace_id": "b2239b5f12391953d65459ce4b97a6a5",
+        "span_id": "11c9cfdfdb170d12",
+        "trace_state": "[]"
+    },
+    "kind": "SpanKind.INTERNAL",
+    "parent_id": null,
+    "start_time": "2026-01-19T18:36:42.764658Z",
+    "end_time": "2026-01-19T18:36:45.331069Z",
+    "status": {
+        "status_code": "OK"
+    },
+    "attributes": {
+        "monocle_apptrace.version": "0.7.2b2",
+        "monocle_apptrace.language": "python",
+        "span_source": "",
+        "workflow.name": "aws-genai-idp",
+        "span.type": "workflow",
+        "entity.1.name": "aws-genai-idp",
+        "entity.1.type": "workflow.generic",
+        "entity.2.type": "app_hosting.generic",
+        "entity.2.name": "generic",
+        "last.inference": "2bc2f5a101284661:*"
+    },
+    "events": [],
+    "links": [],
+    "resource": {
+        "attributes": {
+            "service.name": "aws-genai-idp"
+        },
+        "schema_url": ""
+    }
+}
+]
