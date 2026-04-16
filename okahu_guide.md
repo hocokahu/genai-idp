@@ -385,9 +385,8 @@ python3 update-okahu-specific-functions.py \
 
 1. Finds Lambda functions matching the pattern or exact names
 2. Checks if `OKAHU_API_KEY` exists in environment variables
-3. Updates `OKAHU_API_KEY` to: `okh_TvXJNYyn_PLj0x0qXRcyafFXRydgA`
-4. Adds/updates `OKAHU_INGESTION_ENDPOINT`: `https://ingest.stage.okahu.ai/api/v1/trace/ingest`
-5. Changes take effect immediately (no restart needed)
+3. Updates `OKAHU_API_KEY` to: `okh_************************`
+4. Changes take effect immediately (no restart needed)
 
 ### Configuration
 
@@ -395,11 +394,14 @@ To modify the API key or endpoint, edit the script:
 
 ```python
 # Configuration (lines 16-18)
-NEW_OKAHU_API_KEY = "okh_TvXJNYyn_PLj0x0qXRcyafFXRydgA"
-OKAHU_INGESTION_ENDPOINT = "https://ingest.stage.okahu.ai/api/v1/trace/ingest"
+NEW_OKAHU_API_KEY = "okh_************************"
 ```
 
 ### Example Output
+
+![Example Output](docs/images/eval_example.png)
+
+![Example Output (Kahu)](docs/images/eval_example_kahu.png)
 
 ```
 🔍 Finding Lambda functions...
